@@ -1017,6 +1017,8 @@ MonoBehaviour:
   totalItemCount: 10
   stageCountText: {fileID: 823372401}
   playerCountText: {fileID: 1005354074}
+  GameOverPanel: {fileID: 0}
+  NoRePlay: {fileID: 0}
   stage: 1
 --- !u!4 &1087675610
 Transform:
@@ -2501,7 +2503,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpPower: 20
   itemCount: 0
-  GameOverText: {fileID: 0}
   gameManager: {fileID: 1087675609}
 --- !u!4 &2032515874
 Transform:
