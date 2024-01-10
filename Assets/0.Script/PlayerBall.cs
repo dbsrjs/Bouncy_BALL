@@ -60,13 +60,16 @@ public class PlayerBall : MonoBehaviour
         {
             if (itemCount == gameManager.totalItemCount)
             {
-                if (gameManager.stage == 3)
+                if (gameManager.stage == 4)
                 {
                     GameManager.main.GameOver();
                     Time.timeScale = 0;
                 }
 
-                SceneManager.LoadScene("Game_" + (gameManager.stage + 1).ToString());
+                else
+                {
+                    SceneManager.LoadScene("Game_" + (gameManager.stage + 1).ToString());
+                }
             }
 
             else

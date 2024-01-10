@@ -55,8 +55,8 @@ public class GameManager : MonoBehaviour
 
     public void ExitGameYes()
     {
-        UnityEditor.EditorApplication.isPlaying = false;    //網萄 瞪
-        //Application.Quit(); //網萄
+        //UnityEditor.EditorApplication.isPlaying = false;    //網萄 瞪
+        Application.Quit(); //網萄
     }
 
     public void ExitGameNo()
