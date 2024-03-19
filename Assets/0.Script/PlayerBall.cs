@@ -28,6 +28,11 @@ public class PlayerBall : MonoBehaviour
             isJump = true;
             rd.AddForce(new Vector3(0, jumpPower, 0), ForceMode.Impulse);
         }
+
+        if (Input.GetKeyDown("r"))   //재시작
+        {
+            SceneManager.LoadScene("Game_" + gameManager.stage.ToString());
+        }
     }
 
     void FixedUpdate()
@@ -60,21 +65,20 @@ public class PlayerBall : MonoBehaviour
         {
             if (itemCount == gameManager.totalItemCount)
             {
-                if (gameManager.stage == 4)
+                if (gameManager.stage == 3) //마지막(3)단계까지 클리어
                 {
                     GameManager.main.GameOver();
                     Time.timeScale = 0;
                 }
-
                 else
                 {
-                    SceneManager.LoadScene("Game_" + (gameManager.stage + 1).ToString());
+                    SceneManager.LoadScene("Game_" + (gameManager.stage + 1).ToString());   //다음 단계로 넘어감
                 }
             }
 
             else
             {
-                SceneManager.LoadScene("Game_" + gameManager.stage.ToString());
+                SceneManager.LoadScene("Game_" + gameManager.stage.ToString()); //현재 단계 재시작
             }
         }
     }

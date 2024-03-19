@@ -10,7 +10,6 @@ public class GameManager : MonoBehaviour
 
     public int totalItemCount;
     public Text stageCountText;
-    public Text playerCountText;
 
     [SerializeField] private GameObject GameOverPanel;
     [SerializeField] private GameObject NoRePlay;
@@ -20,12 +19,12 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         main = this;
-        stageCountText.text = "  /" + totalItemCount;
+        stageCountText.text = $"0 / {totalItemCount}";
     }
 
     public void GetItem(int count)
     {
-        playerCountText.text = count.ToString();
+        stageCountText.text = $"{count.ToString()} / {totalItemCount}";
     }
 
     private void OnTriggerEnter(Collider other)
@@ -55,8 +54,8 @@ public class GameManager : MonoBehaviour
 
     public void ExitGameYes()
     {
-        //UnityEditor.EditorApplication.isPlaying = false;    //網萄 瞪
-        Application.Quit(); //網萄
+        UnityEditor.EditorApplication.isPlaying = false;    //網萄 瞪
+        //Application.Quit(); //網萄
     }
 
     public void ExitGameNo()
