@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿ using UnityEngine;
 using System.Collections;
 
 public class AnimationScript : MonoBehaviour {
@@ -33,54 +33,57 @@ public class AnimationScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-       
-        
-        if(isAnimated)
+
+
+        if (Time.timeScale != 0)
         {
-            if(isRotating)
+            if (isAnimated)
             {
-                transform.Rotate(rotationAngle * rotationSpeed * Time.deltaTime);
-            }
-
-            if(isFloating)
-            {
-                floatTimer += Time.deltaTime;
-                Vector3 moveDir = new Vector3(0.0f, 0.0f, floatSpeed);
-                transform.Translate(moveDir);
-
-                if (goingUp && floatTimer >= floatRate)
+                if (isRotating)
                 {
-                    goingUp = false;
-                    floatTimer = 0;
-                    floatSpeed = -floatSpeed;
+                    transform.Rotate(rotationAngle * rotationSpeed * Time.deltaTime);
                 }
 
-                else if(!goingUp && floatTimer >= floatRate)
+                if (isFloating)
                 {
-                    goingUp = true;
-                    floatTimer = 0;
-                    floatSpeed = +floatSpeed;
-                }
-            }
+                    floatTimer += Time.deltaTime;
+                    Vector3 moveDir = new Vector3(0.0f, 0.0f, floatSpeed);
+                    transform.Translate(moveDir);
 
-            if(isScaling)
-            {
-                scaleTimer += Time.deltaTime;
+                    if (goingUp && floatTimer >= floatRate)
+                    {
+                        goingUp = false;
+                        floatTimer = 0;
+                        floatSpeed = -floatSpeed;
+                    }
 
-                if (scalingUp)
-                {
-                    transform.localScale = Vector3.Lerp(transform.localScale, endScale, scaleSpeed * Time.deltaTime);
-                }
-                else if (!scalingUp)
-                {
-                    transform.localScale = Vector3.Lerp(transform.localScale, startScale, scaleSpeed * Time.deltaTime);
+                    else if (!goingUp && floatTimer >= floatRate)
+                    {
+                        goingUp = true;
+                        floatTimer = 0;
+                        floatSpeed = +floatSpeed;
+                    }
                 }
 
-                if(scaleTimer >= scaleRate)
+                if (isScaling)
                 {
-                    if (scalingUp) { scalingUp = false; }
-                    else if (!scalingUp) { scalingUp = true; }
-                    scaleTimer = 0;
+                    scaleTimer += Time.deltaTime;
+
+                    if (scalingUp)
+                    {
+                        transform.localScale = Vector3.Lerp(transform.localScale, endScale, scaleSpeed * Time.deltaTime);
+                    }
+                    else if (!scalingUp)
+                    {
+                        transform.localScale = Vector3.Lerp(transform.localScale, startScale, scaleSpeed * Time.deltaTime);
+                    }
+
+                    if (scaleTimer >= scaleRate)
+                    {
+                        if (scalingUp) { scalingUp = false; }
+                        else if (!scalingUp) { scalingUp = true; }
+                        scaleTimer = 0;
+                    }
                 }
             }
         }

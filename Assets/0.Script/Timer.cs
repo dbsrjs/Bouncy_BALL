@@ -9,6 +9,7 @@ public class Timer : MonoBehaviour
 
     private void Awake()
     {
+        Time.timeScale = 0;
         main = this;
         DontDestroyOnLoad(gameObject);
     }
@@ -16,6 +17,9 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
+        if (Time.timeScale != 0)//게임이 작동 중인 경우
+        {
+            timer += Time.deltaTime;
+        }
     }
 }

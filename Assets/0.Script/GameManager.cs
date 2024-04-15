@@ -1,72 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager main;
-
-    public int totalItemCount;
-    public Text stageCountText;
-    [SerializeField] private Text timerText;
-
-    [SerializeField] private GameObject GameOverPanel;
-    [SerializeField] private GameObject NoRePlay;
+    public static GameManager instance;
     
     public int stage = 0;
 
     private void Awake()
     {
-        main = this;
-        stageCountText.text = $"0 / {totalItemCount}";
+        instance = this;
     }
 
     private void Update()
-    {
-        timerText.text = string.Format("{0:3}", Timer.main.timer);
+    {        
+        if (Input.GetKeyDown(KeyCode.F1))   //다음 씬으로 이동
+        {
+            SceneManager.LoadScene("Game_" + (stage + 1).ToString());
+        }
+
+        if (Input.GetKeyDown(KeyCode.F2))   //전 씬으로 이동
+        {
+            SceneManager.LoadScene("Game_" + (stage - 1).ToString());
+        }
     }
 
-    public void GetItem(int count)
-    {
-        stageCountText.text = $"{count.ToString()} / {totalItemCount}";
-    }
-
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other) //떨어졌을 때 재시작
     {
         if (other.gameObject.tag == "Player")
         {
             SceneManager.LoadScene(stage);
         }
-    }
-
-    public void GameOver()
-    {
-        GameOverPanel.SetActive(true);
-    }
-
-    public void RePlayYes()
-    {
-        SceneManager.LoadScene("Game_0");
-        Time.timeScale = 1;
-    }
-
-    public void RePlayNo()
-    {
-        NoRePlay.SetActive(true);
-        GameOverPanel.SetActive(false);
-    }
-
-    public void ExitGameYes()
-    {
-        UnityEditor.EditorApplication.isPlaying = false;    //빌드 전
-        //Application.Quit(); //빌드
-    }
-
-    public void ExitGameNo()
-    {
-        NoRePlay.SetActive(false);
-        GameOverPanel.SetActive(true);
     }
 }

@@ -8,7 +8,6 @@ public class PlayerBall : MonoBehaviour
     public float jumpPower = 30;
     public int itemCount;
     
-    public GameManager gameManager;
 
     bool isJump;
     Rigidbody rd;
@@ -23,7 +22,7 @@ public class PlayerBall : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Jump") && isJump == false)
+        if (Input.GetButtonDown("Jump") && isJump == false)//점프
         {
             isJump = true;
             rd.AddForce(new Vector3(0, jumpPower, 0), ForceMode.Impulse);
@@ -31,7 +30,7 @@ public class PlayerBall : MonoBehaviour
 
         if (Input.GetKeyDown("r"))   //재시작
         {
-            SceneManager.LoadScene("Game_" + gameManager.stage.ToString());
+            SceneManager.LoadScene("Game_" + GameManager.instance.stage.ToString());
         }
     }
 
@@ -58,27 +57,22 @@ public class PlayerBall : MonoBehaviour
             itemCount++;
             audio.Play();
             other.gameObject.SetActive(false);
-            gameManager.GetItem(itemCount);
+            UiManager.instance.GetItem(itemCount);
         }
 
         else if (other.tag == "Point")
         {
-            if (itemCount == gameManager.totalItemCount)
+            if (itemCount == UiManager.instance.totalItemCount)
             {
-                if (gameManager.stage == 3) //마지막(3)단계까지 클리어
-                {
-                    GameManager.main.GameOver();
-                    Time.timeScale = 0;
-                }
+                if (GameManager.instance.stage == 3) //마지막(3)단계까지 클리어
+                    UiManager.instance.GameOver();
                 else
-                {
-                    SceneManager.LoadScene("Game_" + (gameManager.stage + 1).ToString());   //다음 단계로 넘어감
-                }
+                    SceneManager.LoadScene("Game_" + (GameManager.instance.stage + 1).ToString());   //다음 단계로 넘어감
             }
 
             else
             {
-                SceneManager.LoadScene("Game_" + gameManager.stage.ToString()); //현재 단계 재시작
+                SceneManager.LoadScene("Game_" + GameManager.instance.stage.ToString()); //현재 단계 재시작
             }
         }
     }
