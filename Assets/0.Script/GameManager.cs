@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
 
     public int totalItemCount;
     public Text stageCountText;
+    [SerializeField] private Text timerText;
 
     [SerializeField] private GameObject GameOverPanel;
     [SerializeField] private GameObject NoRePlay;
@@ -20,6 +21,11 @@ public class GameManager : MonoBehaviour
     {
         main = this;
         stageCountText.text = $"0 / {totalItemCount}";
+    }
+
+    private void Update()
+    {
+        timerText.text = string.Format("{0:3}", Timer.main.timer);
     }
 
     public void GetItem(int count)
