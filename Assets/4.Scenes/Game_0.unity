@@ -197,7 +197,7 @@ MonoBehaviour:
   isScaling: 1
   rotationAngle: {x: 0, y: 0, z: 10}
   rotationSpeed: 3.7
-  floatSpeed: 0.00096
+  floatSpeed: 0.0008
   floatRate: 0.5
   startScale: {x: 0.3, y: 0.3, z: 0.3}
   endScale: {x: 0.37, y: 0.37, z: 0.37}
@@ -806,7 +806,7 @@ MonoBehaviour:
   isScaling: 1
   rotationAngle: {x: 0, y: 0, z: 10}
   rotationSpeed: 3.7
-  floatSpeed: 0.00096
+  floatSpeed: 0.0008
   floatRate: 0.5
   startScale: {x: 0.3, y: 0.3, z: 0.3}
   endScale: {x: 0.37, y: 0.37, z: 0.37}
@@ -1159,7 +1159,7 @@ MonoBehaviour:
   isScaling: 1
   rotationAngle: {x: 0, y: 0, z: 10}
   rotationSpeed: 3.7
-  floatSpeed: 0.00096
+  floatSpeed: 0.0008
   floatRate: 0.5
   startScale: {x: 0.3, y: 0.3, z: 0.3}
   endScale: {x: 0.37, y: 0.37, z: 0.37}
@@ -1517,7 +1517,7 @@ MonoBehaviour:
   isScaling: 1
   rotationAngle: {x: 0, y: 0, z: 10}
   rotationSpeed: 3.7
-  floatSpeed: 0.00096
+  floatSpeed: 0.0008
   floatRate: 0.5
   startScale: {x: 0.3, y: 0.3, z: 0.3}
   endScale: {x: 0.37, y: 0.37, z: 0.37}
@@ -1647,7 +1647,7 @@ MonoBehaviour:
   isScaling: 1
   rotationAngle: {x: 0, y: 0, z: 10}
   rotationSpeed: 3.7
-  floatSpeed: 0.00096
+  floatSpeed: 0.0008
   floatRate: 0.5
   startScale: {x: 0.3, y: 0.3, z: 0.3}
   endScale: {x: 0.37, y: 0.37, z: 0.37}
@@ -2372,7 +2372,7 @@ MonoBehaviour:
   isScaling: 1
   rotationAngle: {x: 0, y: 0, z: 10}
   rotationSpeed: 3.7
-  floatSpeed: 0.00096
+  floatSpeed: 0.0008
   floatRate: 0.5
   startScale: {x: 0.3, y: 0.3, z: 0.3}
   endScale: {x: 0.37, y: 0.37, z: 0.37}
@@ -2502,7 +2502,7 @@ MonoBehaviour:
   isScaling: 1
   rotationAngle: {x: 0, y: 0, z: 10}
   rotationSpeed: 3.7
-  floatSpeed: 0.00096
+  floatSpeed: 0.0008
   floatRate: 0.5
   startScale: {x: 0.3, y: 0.3, z: 0.3}
   endScale: {x: 0.37, y: 0.37, z: 0.37}
@@ -2643,7 +2643,7 @@ MonoBehaviour:
   isScaling: 1
   rotationAngle: {x: 0, y: 0, z: 10}
   rotationSpeed: 3.7
-  floatSpeed: 0.00096
+  floatSpeed: 0.0008
   floatRate: 0.5
   startScale: {x: 0.3, y: 0.3, z: 0.3}
   endScale: {x: 0.37, y: 0.37, z: 0.37}
