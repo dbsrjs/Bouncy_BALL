@@ -5,8 +5,8 @@
 - A = Move Left
 - S = Move Back
 - D = Move Right
-- Space = Jump
 - R = Restart the current stage
+- Space = Jump
 
 # Information
 1. If you enter the cylinder without acquiring rubies, you will restart the current stage.
