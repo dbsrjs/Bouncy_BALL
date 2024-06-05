@@ -11,11 +11,10 @@
 # Information
 1. If you enter the cylinder without acquiring rubies, you will restart the current stage.
 2. If it falls into the air, restart the current stage.
+3. Press the R key to restart the current stage.
 
 # How to play video games
 - We get all the rubies and we go into the cylinder.
-
-1. Press the R key to restart the current stage.
 
 # Play Scene
   ## Start Scene
