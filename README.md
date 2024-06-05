@@ -15,6 +15,8 @@
 # How to play video games
 - We get all the rubies and we go into the cylinder.
 
+1. Press the R key to restart the current stage.
+
 # Play Scene
   ## Start Scene
   ![image](https://github.com/dbsrjs/Bouncy_BALL/assets/124150775/991793b2-a7d7-4a11-bb0d-9ee058ff4a24)
