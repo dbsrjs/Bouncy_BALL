@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Timer : MonoBehaviour
-{
-    public static Timer main;
+{public static Timer instance;
     [HideInInspector] public float timer;
 
     private void Awake()
     {
         Time.timeScale = 0;
-        main = this;
+        instance = this;
         DontDestroyOnLoad(gameObject);
     }
 
