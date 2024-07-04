@@ -33,37 +33,53 @@ public class UiManager : MonoBehaviour
         stageCountText.text = $"{count.ToString()} / {totalItemCount}";
     }
 
-    public void GameOver()  //게임 끝날을 때
+    /// <summary>
+    /// 게임 끝날을 때
+    /// </summary>
+    public void GameOver()
     {
         Time.timeScale = 0;
         GameOverPanel.SetActive(true);
     }
 
-    public void RePlayYes() //재시작 버튼
+    /// <summary>
+    /// 재시작 버튼
+    /// </summary>
+    public void RePlayYes() 
     {
         SceneManager.LoadScene("Game_0");
         Time.timeScale = 1;
     }
 
-    public void RePlayNo()  //재시작 안 하는 버튼
+    //재시작 안 하는 버튼
+    public void RePlayNo() 
     {
         NoRePlayPanel.SetActive(true);
         GameOverPanel.SetActive(false);
     }
 
-    public void ExitGameYes()//게임 종료 버튼
+    /// <summary>
+    /// 게임 종료 버튼
+    /// </summary>
+    public void ExitGameYes()
     {
-        UnityEditor.EditorApplication.isPlaying = false;    //빌드 전
-        //Application.Quit(); //빌드
+        //UnityEditor.EditorApplication.isPlaying = false;    //빌드 전
+        Application.Quit(); //빌드
     }
 
-    public void ExitGameNo()    //게임 종료 안 하는 버튼
+    /// <summary>
+    /// 게임 종료 안 하는 버튼
+    /// </summary>
+    public void ExitGameNo()    
     {
         NoRePlayPanel.SetActive(false);
         GameOverPanel.SetActive(true);
     }
 
-    public void GameStart() //게임 시작 버튼
+    /// <summary>
+    /// 게임 시작 버튼
+    /// </summary>
+    public void GameStart()
     {
         Time.timeScale = 1;
         StartButton.SetActive(false);
