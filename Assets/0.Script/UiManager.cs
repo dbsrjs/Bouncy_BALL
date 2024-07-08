@@ -11,7 +11,6 @@ public class UiManager : MonoBehaviour
     public int totalItemCount;  //현재 갖고 있는 루비
 
     [SerializeField] private GameObject StartButton;
-
     [SerializeField] private GameObject player;
 
     public Text stageCountText; //스테이지 Text
@@ -27,6 +26,8 @@ public class UiManager : MonoBehaviour
 
     private AudioSource soundManager;
 
+    private bool gameStart = false;//게임을 시작헀냐?
+
     private void Awake()
     {
         instance = this;
@@ -37,24 +38,24 @@ public class UiManager : MonoBehaviour
 
     private void Start()
     {
+        soundManager.volume = PlayerPrefs.GetFloat("Volume");
         soundSlider.value = soundManager.volume;
+        PlayerPrefs.DeleteAll(); 
     }
 
     private void Update()
     {
         timerText.text = Timer.instance.timer.ToString("F3");   //Timer 증가(소수점 셋째 자리까지 표시)
 
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Debug.Log("ESC");
-            if (SettingPanel.activeSelf == true)//켜져 있다면
-                ExitSetting();
-            else
-                OpenSetting();
-        }
+        if (Input.GetKeyDown(KeyCode.Escape))//ESC키를 눌렀을 때
+            OpenSetting();
     }
 
-    public void GetItem(int count)//루비를 먹었을 때 루비 개수 변경
+    /// <summary>
+    /// 루비를 먹었을 때 루비 개수 변경
+    /// </summary>
+    /// <param name="count"></param>
+    public void GetItem(int count)
     {
         stageCountText.text = $"{count.ToString()} / {totalItemCount}";
     }
@@ -112,6 +113,7 @@ public class UiManager : MonoBehaviour
     {
         Time.timeScale = 1;
         StartButton.SetActive(false);
+        gameStart = true;
     }
 
     /// <summary>
@@ -119,17 +121,25 @@ public class UiManager : MonoBehaviour
     /// </summary>
     public void OpenSetting()
     {
-        Time.timeScale = 0;
-        SettingPanel.SetActive(true);
-    }
+        if (!gameStart && GameManager.instance.stage == 0)  //게임을 시작하지 않았고, 1스테이지가 아닐 때
+        {
+            // 삼항 연산자를 사용하여 상태에 따라 SetActive 호출
+            SettingPanel.SetActive(SettingPanel.activeSelf ? false : true);
+        }
 
-    /// <summary>
-    /// 설창 창 닫기
-    /// </summary>
-    public void ExitSetting()
-    {
-        Time.timeScale = 1;
-        SettingPanel?.SetActive(false);
+        else
+        {
+            if (Time.timeScale == 1)
+            {
+                Time.timeScale = 0;
+                SettingPanel.SetActive(true);
+            }
+            else
+            {
+                Time.timeScale = 1;
+                SettingPanel?.SetActive(false);
+            }
+        }
     }
 
     public void Sound()
@@ -137,5 +147,6 @@ public class UiManager : MonoBehaviour
         soundManager.volume = soundSlider.value;
 
         Debug.Log(soundManager.volume);
+        PlayerPrefs.SetFloat("Volume", soundManager.volume);
     }
 }

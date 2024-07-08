@@ -36,10 +36,13 @@ public class PlayerBall : MonoBehaviour
 
     void FixedUpdate()
     {
-        float h = Input.GetAxisRaw("Horizontal");
-        float v = Input.GetAxisRaw("Vertical");
+        float h = Input.GetAxisRaw("Horizontal");           //가로
+        float v = Input.GetAxisRaw("Vertical");             //세로
 
-        rd.AddForce(new Vector3(h, 0, v), ForceMode.Impulse);
+        //rd.AddForce(new Vector3(h, 0, v), ForceMode.Impulse);
+
+        Vector3 nextPos = new Vector3(h, 0, v) * 1f * Time.deltaTime;
+        transform.position += nextPos;
     }
 
     private void OnCollisionEnter(Collision collision)

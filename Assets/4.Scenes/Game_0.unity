@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3082,7 +3082,7 @@ GameObject:
   - component: {fileID: 1545147647}
   - component: {fileID: 1545147646}
   m_Layer: 5
-  m_Name: Button (Legacy)
+  m_Name: Exit Button (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3153,7 +3153,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1065754198}
         m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
-        m_MethodName: ExitSetting
+        m_MethodName: OpenSetting
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3486,7 +3486,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -500, y: -50.000004}
+  m_SizeDelta: {x: -320, y: -100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1748956536
 MonoBehaviour:
