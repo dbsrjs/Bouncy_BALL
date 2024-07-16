@@ -22,13 +22,13 @@ public class PlayerBall : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Jump") && isJump == false)//Á¡ÇÁ
+        if (Input.GetButtonDown("Jump") && isJump == false)//ì í”„
         {
             isJump = true;
             rd.AddForce(new Vector3(0, jumpPower, 0), ForceMode.Impulse);
         }
 
-        if (Input.GetKeyDown("r"))   //Àç½ÃÀÛ
+        if (Input.GetKeyDown("r"))   //ì¬ì‹œì‘
         {
             SceneManager.LoadScene("Game_" + GameManager.instance.stage.ToString());
         }
@@ -36,13 +36,13 @@ public class PlayerBall : MonoBehaviour
 
     void FixedUpdate()
     {
-        float h = Input.GetAxisRaw("Horizontal");           //°¡·Î
-        float v = Input.GetAxisRaw("Vertical");             //¼¼·Î
+        float h = Input.GetAxisRaw("Horizontal");           //ê°€ë¡œ
+        float v = Input.GetAxisRaw("Vertical");             //ì„¸ë¡œ
 
-        //rd.AddForce(new Vector3(h, 0, v), ForceMode.Impulse);
+        rd.AddForce(new Vector3(h, 0, v), ForceMode.Impulse);
 
-        Vector3 nextPos = new Vector3(h, 0, v) * 1f * Time.deltaTime;
-        transform.position += nextPos;
+        //Vector3 nextPos = new Vector3(h, 0, v) * 1f * Time.deltaTime;
+        //transform.position += nextPos;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -67,15 +67,15 @@ public class PlayerBall : MonoBehaviour
         {
             if (itemCount == UiManager.instance.totalItemCount)
             {
-                if (GameManager.instance.stage == 3) //¸¶Áö¸·(3)´Ü°è±îÁö Å¬¸®¾î
+                if (GameManager.instance.stage == 3) //ë§ˆì§€ë§‰(3)ë‹¨ê³„ê¹Œì§€ í´ë¦¬ì–´
                     UiManager.instance.GameOver();
                 else
-                    SceneManager.LoadScene("Game_" + (GameManager.instance.stage + 1).ToString());   //´ÙÀ½ ´Ü°è·Î ³Ñ¾î°¨
+                    SceneManager.LoadScene("Game_" + (GameManager.instance.stage + 1).ToString());   //ë‹¤ìŒ ë‹¨ê³„ë¡œ ë„˜ì–´ê°
             }
 
             else
             {
-                SceneManager.LoadScene("Game_" + GameManager.instance.stage.ToString()); //ÇöÀç ´Ü°è Àç½ÃÀÛ
+                SceneManager.LoadScene("Game_" + GameManager.instance.stage.ToString()); //í˜„ì¬ ë‹¨ê³„ ì¬ì‹œì‘
             }
         }
     }
