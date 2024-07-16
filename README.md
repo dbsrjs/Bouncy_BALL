@@ -1,20 +1,20 @@
 # Bouncy Ball
 
 # Control
-- W = Move forward
-- A = Move Left
-- S = Move Back
-- D = Move Right
-- R = Restart the current stage
-- Space = Jump
+- W = 앞으로 이동
+- A = 왼쪽으로 이동
+- S = 뒤로 이동
+- D = 오른쪽으로 이동
+- R = 현재 스테이지 재시작
+- Space = 점프
 
 # Information
-1. If you enter the cylinder without acquiring rubies, you will restart the current stage.
-2. If it falls into the air, restart the current stage.
-3. Press the R key to restart the current stage.
+1. 루비를 확득하지 않고 도착지점에 들어가면 현재 스테이지를 재시작합니다.
+2. 공허로 떨어지면 현재 스테이지를 재시작합니다.
+3. R 키로 현재 스테이지를 재시작 할 수 있습니다
 
 # How to play video games
-- We get all the rubies and we go into the cylinder.
+- 루비를 모두 먹고 도착지점에 들어가세요.
 
 # Play Scene
   ## Start Scene
