@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\com\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Bouncy_BALL\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{22964715-BD1B-54DF-856D-970D9C380161}|Assembly-CSharp.csproj|C:\\Users\\com\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Bouncy_BALL\\assets\\0.script\\playerball.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{22964715-BD1B-54DF-856D-970D9C380161}|Assembly-CSharp.csproj|solutionrelative:assets\\0.script\\playerball.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{22964715-BD1B-54DF-856D-970D9C380161}|Assembly-CSharp.csproj|C:\\Users\\com\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Bouncy_BALL\\assets\\0.script\\wall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22964715-BD1B-54DF-856D-970D9C380161}|Assembly-CSharp.csproj|solutionrelative:assets\\0.script\\wall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{22964715-BD1B-54DF-856D-970D9C380161}|Assembly-CSharp.csproj|C:\\Users\\com\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Bouncy_BALL\\assets\\0.script\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{22964715-BD1B-54DF-856D-970D9C380161}|Assembly-CSharp.csproj|solutionrelative:assets\\0.script\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{22964715-BD1B-54DF-856D-970D9C380161}|Assembly-CSharp.csproj|C:\\Users\\com\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Bouncy_BALL\\assets\\0.script\\playerball.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22964715-BD1B-54DF-856D-970D9C380161}|Assembly-CSharp.csproj|solutionrelative:assets\\0.script\\playerball.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{22964715-BD1B-54DF-856D-970D9C380161}|Assembly-CSharp.csproj|C:\\Users\\com\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Bouncy_BALL\\assets\\0.script\\cameramove.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -17,6 +17,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{22964715-BD1B-54DF-856D-970D9C380161}|Assembly-CSharp.csproj|C:\\Users\\com\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Bouncy_BALL\\assets\\0.script\\timer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{22964715-BD1B-54DF-856D-970D9C380161}|Assembly-CSharp.csproj|solutionrelative:assets\\0.script\\timer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22964715-BD1B-54DF-856D-970D9C380161}|Assembly-CSharp.csproj|c:\\users\\com\\onedrive\\\uBC14\uD0D5 \uD654\uBA74\\bouncy_ball\\assets\\0.script\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22964715-BD1B-54DF-856D-970D9C380161}|Assembly-CSharp.csproj|solutionrelative:assets\\0.script\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,30 +30,30 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "PlayerBall.cs",
               "DocumentMoniker": "C:\\Users\\com\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Bouncy_BALL\\Assets\\0.Script\\PlayerBall.cs",
               "RelativeDocumentMoniker": "Assets\\0.Script\\PlayerBall.cs",
               "ToolTip": "C:\\Users\\com\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Bouncy_BALL\\Assets\\0.Script\\PlayerBall.cs",
               "RelativeToolTip": "Assets\\0.Script\\PlayerBall.cs",
-              "ViewState": "AgIAAFEAAAAAAAAAAAAcwGwAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAnwDAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-04T16:57:13.404Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "UiManager.cs",
               "DocumentMoniker": "C:\\Users\\com\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Bouncy_BALL\\Assets\\0.Script\\UiManager.cs",
               "RelativeDocumentMoniker": "Assets\\0.Script\\UiManager.cs",
               "ToolTip": "C:\\Users\\com\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Bouncy_BALL\\Assets\\0.Script\\UiManager.cs",
               "RelativeToolTip": "Assets\\0.Script\\UiManager.cs",
-              "ViewState": "AgIAAFcAAAAAAAAAAAAYwBwAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAEsAAAAAAAAAAAArwEIAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-04T16:57:18.803Z",
               "EditorCaption": ""
@@ -78,6 +82,19 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-10T13:10:05.255Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Wall.cs",
+              "DocumentMoniker": "C:\\Users\\com\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Bouncy_BALL\\Assets\\0.Script\\Wall.cs",
+              "RelativeDocumentMoniker": "Assets\\0.Script\\Wall.cs",
+              "ToolTip": "C:\\Users\\com\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Bouncy_BALL\\Assets\\0.Script\\Wall.cs",
+              "RelativeToolTip": "Assets\\0.Script\\Wall.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-10T10:05:07.323Z",
               "EditorCaption": ""
             }
           ]

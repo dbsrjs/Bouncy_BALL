@@ -5,24 +5,33 @@ using UnityEngine.SceneManagement;
 
 public class PlayerBall : MonoBehaviour
 {
-    public float jumpPower = 30;
-    public int itemCount;
-    
-
-    bool isJump;
     Rigidbody rd;
     AudioSource audio;
 
+    public float jumpPower = 30;
+    bool isJump;
+    public int itemCount;
+
+    public static PlayerBall instance;
+
+    int sceneIndex; //현재 씬 인덱스
+
     private void Awake()
     {
+        instance = this;
         isJump = false;
         rd = GetComponent<Rigidbody>();
         audio = GetComponent<AudioSource>();
     }
 
+    private void Start()
+    {
+        sceneIndex = SceneManager.GetActiveScene().buildIndex;
+    }
+
     private void Update()
     {
-        if (Input.GetButtonDown("Jump") && isJump == false)//점프
+        if (Input.GetButtonDown("Jump") && isJump == false && UiManager.instance.gameStart && Time.timeScale == 1)//점프
         {
             isJump = true;
             rd.AddForce(new Vector3(0, jumpPower, 0), ForceMode.Impulse);
@@ -30,7 +39,31 @@ public class PlayerBall : MonoBehaviour
 
         if (Input.GetKeyDown("r"))   //재시작
         {
-            SceneManager.LoadScene("Game_" + GameManager.instance.stage.ToString());
+            SceneManager.LoadScene(sceneIndex);
+        }
+
+        if (Input.GetKeyDown(KeyCode.F1))   //다음 씬으로 이동
+        {
+            UiManager.instance.GameStart();
+
+            if(sceneIndex == 3)
+                UiManager.instance.GameOver(); 
+
+            if(sceneIndex < 3)
+            SceneManager.LoadScene(sceneIndex + 1);
+        }
+
+        if (Input.GetKeyDown(KeyCode.F2) && sceneIndex > 0)   //전 씬으로 이동
+        {
+            SceneManager.LoadScene(sceneIndex - 1);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))//ESC키를 눌렀을 때
+        {
+            if(UiManager.instance.shortcutKeyPanel.activeSelf)
+                UiManager.instance.OpenShortcutKey();
+            else
+                UiManager.instance.OpenSetting();
         }
     }
 
@@ -40,9 +73,6 @@ public class PlayerBall : MonoBehaviour
         float v = Input.GetAxisRaw("Vertical");             //세로
 
         rd.AddForce(new Vector3(h, 0, v), ForceMode.Impulse);
-
-        //Vector3 nextPos = new Vector3(h, 0, v) * 1f * Time.deltaTime;
-        //transform.position += nextPos;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -67,16 +97,21 @@ public class PlayerBall : MonoBehaviour
         {
             if (itemCount == UiManager.instance.totalItemCount)
             {
-                if (GameManager.instance.stage == 3) //마지막(3)단계까지 클리어
+                if (sceneIndex == 3) //마지막(3)단계까지 클리어
                     UiManager.instance.GameOver();
+
                 else
-                    SceneManager.LoadScene("Game_" + (GameManager.instance.stage + 1).ToString());   //다음 단계로 넘어감
+                    SceneManager.LoadScene(sceneIndex + 1);   //다음 단계로 넘어감
             }
 
             else
-            {
-                SceneManager.LoadScene("Game_" + GameManager.instance.stage.ToString()); //현재 단계 재시작
-            }
+                SceneManager.LoadScene(sceneIndex); //현재 단계 재시작
         }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.tag == "Wall")
+            SceneManager.LoadScene(sceneIndex);
     }
 }
